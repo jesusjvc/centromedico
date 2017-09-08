@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editar expediente de: {paciente} | Consultorio Online </title>
+
+    <!-- Bootstrap -->
+    <link href="{template_url}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{template_url}/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{template_url}/vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="{template_url}/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">            
+
+            <div class="clearfix"></div>   
+
+            <!-- sidebar menu -->
+           {sidebar}
+            <!-- /sidebar menu -->
+
+           </div>
+        </div>
+
+        <!-- top navigation -->
+        {top_navigation}
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Editar información del expediente</h3>
+              </div>            
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Modifica la información que necesites actualizar</h2>                  
+                    <div class="clearfix"></div>{msg}
+                  </div>
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" novalidate action="expedientes.php" method="post">
+
+                      <p>Los campos marcados con * son requeridos</a>
+                      </p>
+                      <span class="section">Información Personal</span>
+                      
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">ID Expediente
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="id_expediente" class="form-control col-md-7 col-xs-12" name="id_expediente" value="{id_expediente}" disabled="" type="text">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nombre(s)  <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="nombre" value="{nombre}" required="required" type="text">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Apellidos  <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="name" class="form-control col-md-7 col-xs-12" name="apellidos" value="{apellidos}" required="required" type="text">
+                        </div>
+                      </div>
+                      
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Responsable o tutor 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="responsable" class="form-control col-md-7 col-xs-12" name="responsable" type="text" value="{responsable}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ocupacion">Ocupación
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="ocupacion" class="form-control col-md-7 col-xs-12" name="ocupacion" type="text" value="{ocupacion}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Religión
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="religion" class="form-control col-md-7 col-xs-12" name="religion" type="text" value="{religion}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Signo Zodiacal
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control col-md-7 col-xs-12" name="zigno" id="zigno">
+                            <option value="{signo_zodiacal}">{signo_zodiacal}</option>
+                            <option value="Acuario">Acuario</option>
+                            <option value="Piscis">Piscis</option>
+                            <option value="Aries">Aries</option>
+                            <option value="Tauro">Tauro</option>
+                            <option value="Géminis">Géminis</option>
+                            <option value="Cáncer">Cáncer</option>
+                            <option value="Leo">Leo</option>
+                            <option value="Virgo">Virgo</option>
+                            <option value="Libra">Libra</option>
+                            <option value="Escorpio">Escorpio</option>
+                            <option value="Sagitario">Sagitario</option>
+                            <option value="Capricornio">Capricornio</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Lugar de nacimiento
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="lugar_nacimiento" id="lugar_nacimiento" class="form-control">
+                                     <option value="{lugar_nacimiento}" selected="">{lugar_nacimiento}</option>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option> 
+                                    <option value="Ciudad de México">Ciudad de México</option>
+                                    <option value="Durango">Durango</option> 
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                </select>
+                        </div>
+                      </div>     
+
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Fecha de nacimiento
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control" name="fecha_nacimiento" data-inputmask="'mask': '99/99/9999'" value="{fecha_nacimiento}">
+                        </div>
+                      </div> 
+   
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Sexo
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="sexo" id="heard" class="form-control" required>
+                            <option value="{sexo}" selected="">{sexo}</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                          </select>  
+                        </div>
+                      </div> 
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Peso Kg
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="peso" type="text" value="{peso}">
+                        </div>
+                      </div>     
+
+                     
+                      <div class="ln_solid"></div>
+                      <span class="section">Dirección</span>
+                     
+                     <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="calle">Calle
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="calle" type="text" value="{calle}">
+                        </div>
+                      </div> 
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="numero">Número
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="numero" type="text" value="{numero}">
+                        </div>
+                      </div> 
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Colonia
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="colonia" type="text" value="{colonia}">
+                        </div>
+                      </div>   
+                      
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="cp">Código Postal
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="cp" type="text" value="{cp}">
+                        </div>
+                      </div> 
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ciudad">Ciudad
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input class="form-control col-md-7 col-xs-12" name="ciudad" type="text" value="{ciudad}">
+                        </div>
+                      </div> 
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="estado">Estado
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                         <select name="estado" id="estado" class="form-control">
+                                    <option value="{estado}" selected="">{estado}</option>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option> 
+                                    <option value="Ciudad de México">Ciudad de México</option>
+                                    <option value="Durango">Durango</option> 
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                </select>
+                        </div>
+                      </div> 
+
+
+                      <div class="ln_solid"></div>
+                      <span class="section">Datos de contacto</span>
+
+                       <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Teléfono de casa 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="tel" id="telephone" name="tel_casa" class="form-control col-md-7 col-xs-12" value="{tel_casa}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Teléfono de oficina 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="tel" name="tel_oficina" class="form-control col-md-7 col-xs-12" value="{tel_oficina}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Celular
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="tel" name="tel_celular" class="form-control col-md-7 col-xs-12" value="{tel_celular}">
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Correo electrónico 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" id="email" name="email" class="form-control col-md-7 col-xs-12" value="{email}">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <input type="hidden" name="action" value="actualizar_expediente">
+                          <input type="hidden" name="id_expediente" value="{id_expediente}">
+                          <button id="send" type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        {footer}
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{template_url}/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="{template_url}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+   
+    <!-- FastClick -->
+    <script src="{template_url}/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="{template_url}/vendors/nprogress/nprogress.js"></script>
+    <!-- validator -->
+    <script src="{template_url}/vendors/validator/validator.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{template_url}/build/js/custom.min.js"></script>
+
+      <!-- jquery.inputmask -->
+    <script src="{template_url}/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    
+     <!-- jQuery autocomplete -->
+    <script src="{template_url}/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+
+    <!-- validator -->
+    <script>
+      // initialize the validator function
+      validator.message.date = 'not a real date';
+
+      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+      $('form')
+        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+        .on('change', 'select.required', validator.checkField)
+        .on('keypress', 'input[required][pattern]', validator.keypress);
+
+      $('.multi.required').on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          submit = false;
+        }
+
+        if (submit)
+          this.submit();
+
+        return false;
+      });
+    </script>
+    <!-- /validator -->
+
+      <!-- jquery.inputmask -->
+    <script>
+      $(document).ready(function() {
+        $(":input").inputmask();
+      });
+    </script>
+    <!-- /jquery.inputmask -->
+
+    <script>
+    $(document).ready(function() {
+       var religiones = { B:"Budista",CR:"Cristiana", CA:"Catolica"};
+
+       var religionesArray = $.map(religiones, function(value, key) {
+          return {
+            value: value,
+            data: key
+          };
+        });
+
+    // initialize autocomplete with custom appendTo
+        $('#religion').autocomplete({
+          lookup: religionesArray
+        });
+     
+
+    var ocupaciones = { AR:"Arquitecto", ES:"Estudiante", DR:"Doctor", I:"Ingeniero"};
+
+    var ocupacionesArray = $.map(ocupaciones, function(value, key) {
+          return {
+            value: value,
+            data: key
+          };
+        });
+
+     $('#ocupacion').autocomplete({
+          lookup: ocupacionesArray
+        });
+
+
+      });
+    </script>
+    <!-- /jQuery autocomplete -->
+  </body>
+</html>

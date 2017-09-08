@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Expedientes | Sistema de Consultorio Online</title>
+
+    <!-- Bootstrap -->
+    <link href="{template_url}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{template_url}/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{template_url}/vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Datatables -->
+    <link href="{template_url}/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="{template_url}/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="{template_url}/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="{template_url}/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="{template_url}/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{template_url}/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+         <div class="left_col scroll-view">
+            {sidebar}
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        {top_navigation}
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Expedientes</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">               
+                    <form action="expedientes.php" method="GET">
+                     <div class="input-group">  
+                        <input name="busqueda" type="text" class="form-control" placeholder="Nombre o ID...">
+                        <span class="input-group-btn">
+                          <input type="submit" class="btn btn-default" value="Buscar">
+                          <input type="hidden" name="action" value="buscar_expediente">
+                        </span>
+                        </div>
+                    </form>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div class="x_content">
+                    <div class="row">
+                      <!-- top tiles -->
+                      <div class="row tile_count">
+                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                          <span class="count_top"><i class="fa fa-user"></i> Total Expedientes</span>
+                          <div class="count">{total_expedientes}</div>
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                          <span class="count_top"><i class="fa fa-user"></i> Hombres</span>
+                          <div class="count green">{total_hombres}</div>
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                          <span class="count_top"><i class="fa fa-user"></i> Mujeres</span>
+                          <div class="count">{total_mujeres}</div>
+                        </div>                    
+                        
+                       
+                      </div>
+                        <!-- /top tiles -->
+                      <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        {msg}
+                      </div>
+                        
+
+
+                     
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Expedientes</h2>
+                   
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                   
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th>ID Expediente</th>
+                          <th>Nombre</th>
+                          <th>Apellido</th>
+                          <th>Celular</th>
+                          <th>Télefono</th>
+                          <th>Ocupación</th>
+                          <th>Última Visita</th>
+                          <th>Ver expediente</th>
+                          <th>Editar expediente</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         {lista_expedientes}  
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+            
+                                                           
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        {footer}
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{template_url}/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="{template_url}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="{template_url}/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="{template_url}/vendors/nprogress/nprogress.js"></script>
+    <!-- Datatables -->
+    <script src="{template_url}/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="{template_url}/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="{template_url}/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="{template_url}/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="{template_url}/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="{template_url}/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{template_url}/build/js/custom.min.js"></script>
+
+
+    <script>
+      $(document).ready(function() {
+       
+        $('#datatable-responsive').DataTable();
+
+
+      });
+    </script>
+  </body>
+</html>

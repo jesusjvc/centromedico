@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Agregar historia clinica de: {paciente} | Consultorio Online </title>
+
+    <!-- Bootstrap -->
+    <link href="{template_url}/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{template_url}/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{template_url}/vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="{template_url}/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">            
+
+            <div class="clearfix"></div>   
+
+            <!-- sidebar menu -->
+           {sidebar}
+            <!-- /sidebar menu -->
+
+           </div>
+        </div>
+
+        <!-- top navigation -->
+        {top_navigation}
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>Expediente de {nombre}</h3>
+              </div>            
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Agregar historia clínica</h2>                  
+                    <div class="clearfix"></div>{msg}
+                  </div>
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" novalidate action="expedientes.php" method="post">
+
+                      <p>Los campos marcados con * son requeridos</a>
+                      </p>
+                    
+                      
+            
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Tipo  <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select name="tipo" class="form-control">
+                            <option value="Antecedentes patalógicos">Antecedentes patalógicos</option>
+                            <option value="Antecedente más importante">Antecedente más importante</option>
+                            <option value="Enfermedad más importante">Enfermedad más importante</option>
+                            <option value="Tratamientos quirúrgicos">Tratamientos quirúrgicos</option>
+                            <option value="Diagnotico bionergético">Diagnotico bionergético</option>
+
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Descripción  <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">                          
+                          <textarea name="descripcion" class="form-control"></textarea>
+                        </div>
+                      </div>
+                      
+                    <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Observaciones 
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">                          
+                          <textarea name="observaciones" class="form-control"></textarea>
+                        </div>
+                      </div>
+                     
+                      <div class="ln_solid"></div>
+
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <input type="hidden" name="action" value="agregar_hc">
+                          <input type="hidden" name="id_expediente" value="{id_expediente}">
+                          <button id="send" type="submit" class="btn btn-success">Guardar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        {footer}
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{template_url}/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="{template_url}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+   
+    <!-- FastClick -->
+    <script src="{template_url}/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="{template_url}/vendors/nprogress/nprogress.js"></script>
+    <!-- validator -->
+    <script src="{template_url}/vendors/validator/validator.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{template_url}/build/js/custom.min.js"></script>
+
+      <!-- jquery.inputmask -->
+    <script src="{template_url}/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    
+     <!-- jQuery autocomplete -->
+    <script src="{template_url}/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+
+    <!-- validator -->
+    <script>
+      // initialize the validator function
+      validator.message.date = 'not a real date';
+
+      // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+      $('form')
+        .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+        .on('change', 'select.required', validator.checkField)
+        .on('keypress', 'input[required][pattern]', validator.keypress);
+
+      $('.multi.required').on('keyup blur', 'input', function() {
+        validator.checkField.apply($(this).siblings().last()[0]);
+      });
+
+      $('form').submit(function(e) {
+        e.preventDefault();
+        var submit = true;
+
+        // evaluate the form using generic validaing
+        if (!validator.checkAll($(this))) {
+          submit = false;
+        }
+
+        if (submit)
+          this.submit();
+
+        return false;
+      });
+    </script>
+    <!-- /validator -->
+
+      <!-- jquery.inputmask -->
+    <script>
+      $(document).ready(function() {
+        $(":input").inputmask();
+      });
+    </script>
+    <!-- /jquery.inputmask -->
+
+    <script>
+    $(document).ready(function() {
+       var religiones = { B:"Budista",CR:"Cristiana", CA:"Catolica"};
+
+       var religionesArray = $.map(religiones, function(value, key) {
+          return {
+            value: value,
+            data: key
+          };
+        });
+
+    // initialize autocomplete with custom appendTo
+        $('#religion').autocomplete({
+          lookup: religionesArray
+        });
+     
+
+    var ocupaciones = { AR:"Arquitecto", ES:"Estudiante", DR:"Doctor", I:"Ingeniero"};
+
+    var ocupacionesArray = $.map(ocupaciones, function(value, key) {
+          return {
+            value: value,
+            data: key
+          };
+        });
+
+     $('#ocupacion').autocomplete({
+          lookup: ocupacionesArray
+        });
+
+
+      });
+    </script>
+    <!-- /jQuery autocomplete -->
+  </body>
+</html>

@@ -1,0 +1,59 @@
+     <div class="navbar nav_title" style="border: 0;">
+              <a href="./" class="site_title"><i class="fa fa-user-md"></i> <span>Consultorio Médico</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="{avatar}" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Bienvenido,</span>
+                <h2>{nombre_usuario} {apellidos_usuario}</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>Menú</h3>
+                <ul class="nav side-menu">
+                  
+                                
+                  <li><a><i class="fa fa-time"></i> Citas <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="./horarios.php">Horarios</a></li> 
+                    </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-users"></i> Expedientes <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="./expedientes.php">Ver expedientes</a></li> 
+                      <li><a href="./expedientes.php?action=nuevo">Agregar expediente</a></li>                    
+                    </ul>
+                  </li>
+                   <li><a><i class="fa fa-medkit"></i> Tratamientos <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="./tratamientos.php?action=ver_tratamientos">Tratamientos</a></li> 
+                      <li><a href="./tratamientos.php?action=nuevo_tratamiento">Agregar nuevo tratamiento</a></li> 
+                      <li><a href="./tratamientos.php?action=ver_medicamentos">Medicamentos</a></li> 
+                      <li><a href="./tratamientos.php?action=nuevo">Agregar nuevo medicamento</a></li>                    
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-user-md"></i> Doctores y usuarios<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="./doctores.php">Ver doctores</a></li> 
+                      <li><a href="./doctores.php?action=nuevo">Agregar nuevo doctor</a></li>                    
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            
+
+            </div>
+            <!-- /sidebar menu -->        
